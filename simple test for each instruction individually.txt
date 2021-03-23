@@ -1,0 +1,35 @@
+v2.0 raw
+0028              #and   $R0 , R2 ,R1
+0029              #OR    $R0 , R2 ,R1
+002a              #xor   $R0 , R2 ,R1 
+0047              #eqv   $R0 , R2 ,R1   
+0828              #add   $R0 , R2 ,R1
+0829              #sub   $R0 , R2 ,R1
+082a              #slt   $R0 , R2 ,R1
+082b              #seq   $R0 , R2 ,R1
+2021              #andi  $R0 , R1 ,1
+2823              #ori   $R0 , R1 ,3
+3021              #xori  $R0 , R1 ,1
+3821              #eqvi  $R0 , R1 ,1
+4021              #addi  $R0 , R1 ,1
+4823              #slti  $R0 , R1 ,3
+5021              #seqi  $R0 , R1 ,1
+5822              #sll   $R0 , R1 ,2
+6022              #srl   $R0 , R1 ,2
+6821              #ror   $R0 , R1 ,1
+7022              #beq   $R0 , R1 ,2
+7822              #bnq   $R0 , R1 ,2
+8023              #lw    $R0 , R1 ,3
+8823              #sw    $R0 , R1 ,3
+a003              #BEQZ  $R0 ,3
+a803              #BNEZ  $R0 ,3
+b003              #BLTZ  $R0 ,3
+b803              #BGEZ  $R0 ,3
+c003              #BGTZ  $R0 ,3
+c803              #BLEZ  $R0 ,3
+d006              #jr    $R0 ,6
+d806              #jalr  $R0 ,6
+e009              #set   $R0 ,9
+e809              #sset  $R0 ,9
+f006              #j   , 6
+f806              #jal , 6

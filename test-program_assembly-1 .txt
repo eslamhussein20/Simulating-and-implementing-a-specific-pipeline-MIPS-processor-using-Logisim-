@@ -1,0 +1,51 @@
+set $R0,1        # Initialize the test register 
+sset $R0,32
+sset $R0,16
+sset $R0,8
+
+
+set $R1,0       # "1's counter " register
+sset $R1,0
+sset $R1,0
+sset $R1,0
+
+set $R2,0       # "BNEQZ test" register
+sset $R2,0
+sset $R2,0
+sset $R2,0 
+
+
+set $R3,0       # the test register size = 32 bits
+sset $R3,0
+sset $R3,0
+sset $R3,32
+
+
+start: 
+   
+andi $R2,$R0,1   # check the firt right bit in the test register if it is "1" or not
+srl  $R0,1       # shift right to let the next bit ready for test 
+BNEQZ $R2,Label  #  If the first right bit is "1" then R2=1 and the condtion is true then we branch to label 
+                    IF not it will continue normally
+ 
+addi $R3,$R3,-1   # decrease the size of test bits by 1  
+
+BEQZ $R3,Finish   # If we finish testing all 32 bits it branch to finish
+
+J start 
+
+Label:
+
+addi $R1,$R1,1   # the counter  icrease by 1 if condition is true 
+  
+addi  $R3,R3,-1   # decrease the size of test bits by 1 
+
+BEQZ $R3,Finish  # If we finish testing all 32 bits it branch to finish
+
+J start 
+
+
+finish :
+
+////// inputs : 0000 0001 0010 0000 0001 0000 0000 1000  
+////// expected output "number of 1's" : 4 
